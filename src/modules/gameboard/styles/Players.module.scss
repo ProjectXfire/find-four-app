@@ -1,0 +1,39 @@
+$player1-color: rgb(45, 45, 230);
+$player2-color: rgb(230, 73, 45);
+
+@mixin player {
+  padding: 10px 50px;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 12px;
+  font-weight: bold;
+  color: white;
+  -webkit-box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.52);
+  box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.52);
+  & span:nth-of-type(2) {
+    font-size: 3rem;
+  }
+}
+
+.board-players {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  & div {
+    @include player;
+  }
+  & div:nth-of-type(1) {
+    background-color: $player1-color;
+  }
+  & div:nth-of-type(2) {
+    background-color: $player2-color;
+  }
+}
+
+.turn-player {
+  color: rgb(60, 214, 93) !important;
+}
