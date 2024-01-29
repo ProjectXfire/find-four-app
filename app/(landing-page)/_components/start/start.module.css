@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: white;
+}
+
+.text {
+  font-size: 1.5rem;
+  animation: animate-text 3s;
+}
+
+.start {
+  width: 100%;
+  padding: 8px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  background-color: var(--color-1);
+  color: white;
+  transition: background-color 300ms;
+  animation: animate-button 1s;
+}
+
+.start:hover {
+  background-color: var(--color-2);
+}
+
+.start:active {
+  scale: 0.95;
+}
+
+@keyframes animate-text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animate-button {
+  0% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
