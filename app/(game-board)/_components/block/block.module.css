@@ -1,0 +1,35 @@
+.block {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background-color: rgb(212, 212, 212);
+}
+
+.block__ball {
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background-color: rgb(243, 243, 243);
+}
+
+.p1-color {
+  background-color: var(--player1-color) !important;
+  animation: ball-animation 700ms forwards;
+}
+
+.p2-color {
+  background-color: var(--player2-color) !important;
+  animation: ball-animation 700ms forwards;
+}
+
+@keyframes ball-animation {
+  0% {
+    transform: translateY(-800px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
