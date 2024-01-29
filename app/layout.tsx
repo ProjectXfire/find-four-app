@@ -1,5 +1,8 @@
-import "./globals.css";
 import { Fredoka } from "next/font/google";
+// Styles
+import "./globals.css";
+// Components
+import { BackImage } from "./(shared)/_components";
 
 const inter = Fredoka({ subsets: ["latin"] });
 
@@ -15,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <BackImage />
+        {children}
+      </body>
     </html>
   );
 }
