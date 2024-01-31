@@ -16,16 +16,17 @@ export const BoardItem: FC<Props> = ({ block }) => {
   } = useContext(BoardContext);
 
   return (
-    <div className={styles["block"]}>
+    <li className={styles["block"]}>
+      <div className={`${styles["block__ball"]} `} />
       <div
-        className={`${styles["block__ball"]} ${
+        className={`${styles.ball} ${
           board[block[0]][block[1]] === null
             ? ""
             : board[block[0]][block[1]] === "p1"
             ? styles["p1-color"]
             : styles["p2-color"]
         }`}
-      />
-    </div>
+      ></div>
+    </li>
   );
 };

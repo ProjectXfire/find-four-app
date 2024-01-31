@@ -5,9 +5,10 @@ import styles from "./title.module.css";
 interface Props {
   title: string;
   size?: "small" | "normal" | "large";
+  color?: string;
 }
 
-const Title: FC<Props> = ({ title, size = "normal" }) => {
+const Title: FC<Props> = ({ title, size = "normal", color = "black" }) => {
   const sizeStyle = {
     small: "title--small",
     normal: "title--normal",
@@ -15,7 +16,12 @@ const Title: FC<Props> = ({ title, size = "normal" }) => {
   };
 
   return (
-    <p className={`${styles.title} ${styles[sizeStyle[size]]}`}>{title}</p>
+    <p
+      style={{ color }}
+      className={`${styles.title} ${styles[sizeStyle[size]]}`}
+    >
+      {title}
+    </p>
   );
 };
 

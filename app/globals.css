@@ -4,8 +4,11 @@
   margin: 0;
   --color-1: #dc2626;
   --color-2: #b91c1c;
-  --player1-color: rgb(45, 45, 230);
-  --player2-color: rgb(230, 73, 45);
+  --color-3: #cbd5e1;
+  --color-4: #94a3b8;
+  --success: #16a34a;
+  --player1-color: #6d28d9;
+  --player2-color: #1d4ed8;
 }
 
 html,
@@ -19,4 +22,11 @@ body {
 a {
   text-align: center;
   text-decoration: none;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }

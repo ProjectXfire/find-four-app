@@ -15,18 +15,49 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border: 3px solid var(--color-4);
   border-radius: 12px;
-  background-color: white;
+  background-color: var(--color-3);
+}
+
+.modal-fadein {
+  animation: fade-in-modal 1s forwards;
+}
+
+@keyframes fade-in-modal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.modal-fadeout {
+  animation: fade-out-modal 1s forwards;
+}
+
+@keyframes fade-out-modal {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .modal__title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   text-align: center;
+  color: var(--color-1);
 }
 
 .modal__subtitle {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  color: white;
+  text-shadow: 0 0 10px var(--color-2), 0 0 20px var(--color-2),
+    0 0 30px var(--color-2);
 }
 
 .modal__actions {
@@ -35,11 +66,16 @@
 
 .modal-close {
   margin-top: 10px;
-  padding: 10px 20px;
+  padding: 8px 20px;
   font-size: 1rem;
-  background-color: white;
-  border: 1px solid rgb(217, 48, 29);
-  color: rgb(217, 48, 29);
+  color: var(--color-3);
+  border: 2px solid var(--color-2);
+  background-color: var(--color-1);
+  font-weight: bold;
   border-radius: 8px;
-  outline: none;
+  cursor: pointer;
+}
+
+.modal-close:active {
+  scale: 0.95;
 }

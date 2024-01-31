@@ -1,27 +1,37 @@
 .block {
   width: 120px;
   height: 120px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
-  background-color: rgb(212, 212, 212);
+  border-radius: 8px;
+  border: 2px solid var(--color-4);
+  background-color: var(--color-3);
+  cursor: pointer;
 }
 
 .block__ball {
   width: 90%;
   height: 90%;
   border-radius: 50%;
-  background-color: rgb(243, 243, 243);
+  background-color: var(--color-4);
+}
+
+.ball {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
 }
 
 .p1-color {
-  background-color: var(--player1-color) !important;
-  animation: ball-animation 700ms forwards;
+  background-color: var(--player1-color);
+  animation: ball-animation 700ms ease-out forwards;
 }
 
 .p2-color {
-  background-color: var(--player2-color) !important;
+  background-color: var(--player2-color);
   animation: ball-animation 700ms forwards;
 }
 
