@@ -1,0 +1,42 @@
+.menu {
+  position: relative;
+  display: flex;
+}
+
+.menu-trigger {
+  padding: 8px;
+  cursor: pointer;
+  color: var(--color-1);
+  border: 2px solid var(--color-1);
+  background-color: transparent;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.menu-content {
+  width: 100%;
+  min-width: 120px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 45px;
+  right: 0px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-2);
+  overflow: hidden;
+}
+
+.menu-content__item {
+  padding: 8px 10px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-align: start;
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+
+.menu-content__item:hover {
+  background-color: var(--color-1);
+}

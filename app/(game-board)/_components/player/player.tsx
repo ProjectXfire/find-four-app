@@ -10,7 +10,7 @@ interface Props {
 
 export const Players: FC<Props> = ({ playerTurn }) => {
   return (
-    <section className={styles["board-players"]}>
+    <div className={styles["board-players"]}>
       <div
         className={`${styles.player} ${styles["player-1"]} ${
           playerTurn === "p1" ? styles["turn-player"] : ""
@@ -27,6 +27,6 @@ export const Players: FC<Props> = ({ playerTurn }) => {
         <span>Player</span>
         <span className={styles["player__number"]}>2</span>
       </div>
-    </section>
+    </div>
   );
 };

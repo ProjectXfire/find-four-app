@@ -15,28 +15,27 @@ interface Props {
 
 export const BoardColumns: FC<Props> = ({ items, columnId }) => {
   const {
-    state: { isOpenModal },
+    state: { boardConfig },
     setBlockPlayer,
   } = useContext(BoardContext);
-  const item = useRef(5);
+  const item = useRef(boardConfig.limitColumn);
 
   useEffect(() => {
-    if (isOpenModal) {
-      item.current = 5;
-    }
-  }, [isOpenModal]);
+    item.current = boardConfig.limitColumn;
+  }, [boardConfig]);
 
   return (
-    <div
-      className={styles["board-column"]}
+    <li
       onClick={() => {
         setBlockPlayer(columnId, item.current);
         item.current--;
       }}
     >
-      {items.map((_, i) => (
-        <BoardItem key={i} block={[columnId, i]} />
-      ))}
-    </div>
+      <ul className={styles["board-column"]}>
+        {items.map((_, i) => (
+          <BoardItem key={i} block={[columnId, i]} />
+        ))}
+      </ul>
+    </li>
   );
 };

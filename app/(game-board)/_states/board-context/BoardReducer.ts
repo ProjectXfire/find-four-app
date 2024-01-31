@@ -1,4 +1,4 @@
-import { BoardState } from "./BoardContext";
+import { BoardState, TPlayer } from "./BoardContext";
 
 type IAction =
   | { type: "[Init board]"; payload: Array<Array<string | null>> }
@@ -16,6 +16,9 @@ type IAction =
         isModalOpen: boolean;
       };
     }
+  | { type: "[Update plays]"; payload: number }
+  | { type: "[Update player score]"; payload: TPlayer }
+  | { type: "[Set board config]"; payload: { columns: number; rows: number } }
   | { type: "[Reset game]"; payload: Array<Array<string | null>> };
 
 export function BoardReducer(state: BoardState, action: IAction): BoardState {
@@ -35,6 +38,28 @@ export function BoardReducer(state: BoardState, action: IAction): BoardState {
         isOpenModal: action.payload.isModalOpen,
         winner: action.payload.winner,
       };
+    case "[Update player score]": {
+      return {
+        ...state,
+        [action.payload]: state[action.payload] + 1,
+      };
+    }
+    case "[Update plays]": {
+      return {
+        ...state,
+        countPlays: action.payload,
+      };
+    }
+    case "[Set board config]": {
+      return {
+        ...state,
+        boardConfig: {
+          columns: action.payload.columns,
+          rows: action.payload.rows,
+          limitColumn: action.payload.columns - 1,
+        },
+      };
+    }
     case "[Reset game]":
       return {
         ...state,
@@ -42,6 +67,7 @@ export function BoardReducer(state: BoardState, action: IAction): BoardState {
         playerTurn: "p1",
         isOpenModal: false,
         winner: null,
+        countPlays: 0,
       };
     default:
       return state;

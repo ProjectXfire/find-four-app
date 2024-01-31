@@ -6,30 +6,48 @@ import { BoardContext } from "@app/(game-board)/_states";
 // Styles
 import styles from "./board.module.css";
 // Components
-import { WinnerModal, BoardColumns, Players } from "..";
+import { WinnerModal, BoardColumns, Players, Score } from "..";
 
 export const Board = () => {
   const {
-    state: { board, playerTurn, isOpenModal, winner },
+    state: {
+      board,
+      playerTurn,
+      isOpenModal,
+      winner,
+      p1,
+      p2,
+      countPlays,
+      boardConfig: { columns, rows },
+    },
     resetGame,
   } = useContext(BoardContext);
 
   return (
-    <main>
-      <section style={{ width: "100%", overflow: "auto" }}>
-        <div className={styles["board-columns"]}>
+    <>
+      <section className={styles["container-header"]}>
+        <Score player1={p1} player2={p2} />
+      </section>
+      <section className={styles["container-board"]}>
+        <ul className={styles["board-columns"]}>
           {board.map((items, i) => (
             <BoardColumns key={i} items={items} columnId={i} />
           ))}
-        </div>
+        </ul>
       </section>
       <Players playerTurn={playerTurn} />
       <WinnerModal
-        isOpen={isOpenModal}
+        isOpen={countPlays === columns * rows}
         title="The winner is"
-        subtitle={winner}
+        subtitle="No winner"
         close={resetGame}
       />
-    </main>
+      <WinnerModal
+        isOpen={isOpenModal}
+        title="The winner is"
+        subtitle={winner === "p1" ? "Player 1" : "Player 2"}
+        close={resetGame}
+      />
+    </>
   );
 };
