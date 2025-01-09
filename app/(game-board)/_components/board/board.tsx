@@ -2,14 +2,17 @@
 
 import React, { useContext } from "react";
 // States
-import { BoardContext } from "@app/(game-board)/_states";
+import { BoardContext } from "@app/(game-board)/_states/board-context/BoardContext";
 // Styles
 import styles from "./board.module.css";
 // Components
-import { WinnerModal, BoardColumns, Players, Score } from "..";
-import { FadeInContainer } from "@app/(shared)/_components";
+import Score from "../score/score";
+import WinnerModal from "../winner-modal/winner-modal";
+import BoardColumns from "../columns/columns";
+import Players from "../player/player";
+import FadeInContainer from "@app/(shared)/_components/fadein-container/FadeInContainer";
 
-export const Board = () => {
+export default function Board(): React.ReactElement {
   const {
     state: {
       board,
@@ -53,4 +56,4 @@ export const Board = () => {
       />
     </>
   );
-};
+}

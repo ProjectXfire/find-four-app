@@ -1,12 +1,10 @@
-import { Providers } from "@app/(shared)/_components";
-
-import type { JSX } from "react";
+import Providers from "@app/(shared)/_components/providers/providers";
 
 interface Props {
   children: React.ReactNode;
 }
 
-function BoardLayout({ children }: Props): JSX.Element {
+function BoardLayout({ children }: Props): React.ReactElement {
   return <Providers>{children}</Providers>;
 }
 export default BoardLayout;

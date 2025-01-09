@@ -1,8 +1,8 @@
 "use client";
 
-import React, { FC, useContext } from "react";
+import { useContext } from "react";
 // Context
-import { BoardContext } from "@app/(game-board)/_states";
+import { BoardContext } from "@app/(game-board)/_states/board-context/BoardContext";
 // Styles
 import styles from "./block.module.css";
 
@@ -10,7 +10,7 @@ interface Props {
   block: [number, number];
 }
 
-export const BoardItem: FC<Props> = ({ block }) => {
+export default function BoardItem({ block }: Props): React.ReactElement {
   const {
     state: { board },
   } = useContext(BoardContext);
@@ -29,4 +29,4 @@ export const BoardItem: FC<Props> = ({ block }) => {
       ></div>
     </li>
   );
-};
+}

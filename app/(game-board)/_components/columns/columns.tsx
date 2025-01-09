@@ -1,19 +1,19 @@
 "use client";
 
-import React, { FC, useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 // Styles
 import styles from "./columns.module.css";
 // States
-import { BoardContext } from "@app/(game-board)/_states";
+import { BoardContext } from "@app/(game-board)/_states/board-context/BoardContext";
 // Components
-import { BoardItem } from "..";
+import BoardItem from "../block/block";
 
 interface Props {
   items: Array<null | string>;
   columnId: number;
 }
 
-export const BoardColumns: FC<Props> = ({ items, columnId }) => {
+export default function BoardColumns({ items, columnId }: Props): React.ReactElement {
   const {
     state: { boardConfig },
     setBlockPlayer,
@@ -38,4 +38,4 @@ export const BoardColumns: FC<Props> = ({ items, columnId }) => {
       </ul>
     </li>
   );
-};
+}

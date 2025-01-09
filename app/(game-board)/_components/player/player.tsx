@@ -8,7 +8,7 @@ interface Props {
   playerTurn: string;
 }
 
-export const Players: FC<Props> = ({ playerTurn }) => {
+export default function Players({ playerTurn }: Props): React.ReactElement {
   return (
     <div className={styles["board-players"]}>
       <div
@@ -29,4 +29,4 @@ export const Players: FC<Props> = ({ playerTurn }) => {
       </div>
     </div>
   );
-};
+}

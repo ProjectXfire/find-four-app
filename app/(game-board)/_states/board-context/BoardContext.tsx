@@ -1,7 +1,8 @@
 import { createContext, ReactNode, useEffect, useReducer } from "react";
 import { BoardReducer } from "./BoardReducer";
 // Helpers
-import { fourInLine, newBoard } from "@app/(shared)/_helpers";
+import { fourInLine } from "@app/(shared)/_helpers/verifyWinner";
+import { newBoard } from "@app/(shared)/_helpers/createBoard";
 
 export type TPlayer = "p1" | "p2";
 
@@ -54,10 +55,7 @@ export const BoardProvider = ({ children }: { children: ReactNode }) => {
     const turn = state.playerTurn === "p1" ? "p2" : "p1";
     const updateBoard = [...state.board];
     updateBoard[column][item] = state.playerTurn;
-    const values = await fourInLine(state.board, state.playerTurn, [
-      column,
-      item,
-    ]);
+    const values = await fourInLine(state.board, state.playerTurn, [column, item]);
     const winner = Math.max(...values) === 4 ? true : false;
     if (winner) {
       dispatch({ type: "[Update player score]", payload: state.playerTurn });
@@ -95,9 +93,7 @@ export const BoardProvider = ({ children }: { children: ReactNode }) => {
   }, [state.boardConfig]);
 
   return (
-    <BoardContext.Provider
-      value={{ state, setBlockPlayer, resetGame, setBoadConfig }}
-    >
+    <BoardContext.Provider value={{ state, setBlockPlayer, resetGame, setBoadConfig }}>
       {children}
     </BoardContext.Provider>
   );
