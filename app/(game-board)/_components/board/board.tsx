@@ -7,6 +7,7 @@ import { BoardContext } from "@app/(game-board)/_states";
 import styles from "./board.module.css";
 // Components
 import { WinnerModal, BoardColumns, Players, Score } from "..";
+import { FadeInContainer } from "@app/(shared)/_components";
 
 export const Board = () => {
   const {
@@ -28,13 +29,15 @@ export const Board = () => {
       <section className={styles["container-header"]}>
         <Score player1={p1} player2={p2} />
       </section>
-      <section className={styles["container-board"]}>
-        <ul className={styles["board-columns"]}>
-          {board.map((items, i) => (
-            <BoardColumns key={i} items={items} columnId={i} />
-          ))}
-        </ul>
-      </section>
+      <FadeInContainer>
+        <section className={styles["container-board"]}>
+          <ul className={styles["board-columns"]}>
+            {board.map((items, i) => (
+              <BoardColumns key={i} items={items} columnId={i} />
+            ))}
+          </ul>
+        </section>
+      </FadeInContainer>
       <Players playerTurn={playerTurn} />
       <WinnerModal
         isOpen={countPlays === columns * rows}

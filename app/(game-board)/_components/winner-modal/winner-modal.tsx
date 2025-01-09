@@ -45,13 +45,10 @@ export const WinnerModal: FC<Props> = ({ isOpen, close, title, subtitle }) => {
             onAnimationEnd={onAnimationEnd}
           >
             <h1 className={styles["modal__title"]}>{title}</h1>
+            <p>⭐⭐⭐⭐⭐</p>
             <p className={styles["modal__subtitle"]}>{subtitle}</p>
             <div className={styles["modal__actions"]}>
-              <button
-                className={styles["modal-close"]}
-                type="button"
-                onClick={onClosing}
-              >
+              <button className={styles["modal-close"]} type="button" onClick={onClosing}>
                 Close
               </button>
             </div>
