@@ -1,0 +1,20 @@
+.score {
+  min-width: 130px;
+  padding: 5px 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  border: 2px solid var(--white);
+  border-radius: 10px;
+  background-color: var(--color-6);
+}
+
+.score__name {
+  color: var(--color-4);
+  font-weight: bold;
+}
+
+.score__value {
+  color: var(--white);
+  font-weight: bold;
+}
