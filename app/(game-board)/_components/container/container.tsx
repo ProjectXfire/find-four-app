@@ -1,7 +1,7 @@
 "use client";
 
 import NextLink from "next/link";
-import { useContext } from "react";
+import { useContext, type JSX } from "react";
 import { type TItems } from "@app/(shared)/_components/menu/menu";
 // States
 import { BoardContext } from "@app/(game-board)/_states";

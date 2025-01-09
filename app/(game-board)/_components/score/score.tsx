@@ -1,5 +1,7 @@
 import styles from "./score.module.css";
 
+import type { JSX } from "react";
+
 interface Props {
   player1: number;
   player2: number;
