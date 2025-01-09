@@ -1,6 +1,8 @@
 // Components
-import { Board, Container } from "@app/(game-board)/_components";
-import { Providers, Title } from "@app/(shared)/_components";
+
+import Board from "@app/(game-board)/_components/board/board";
+import Container from "@app/(game-board)/_components/container/container";
+import Title from "@app/(shared)/_components/title/title";
 
 export default function Home() {
   return (

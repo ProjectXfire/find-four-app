@@ -1,20 +1,20 @@
 "use client";
 
+import type { TItems } from "@app/(shared)/_components/menu/menu";
 import NextLink from "next/link";
-import { useContext, type JSX } from "react";
-import { type TItems } from "@app/(shared)/_components/menu/menu";
+import { useContext } from "react";
 // States
-import { BoardContext } from "@app/(game-board)/_states";
+import { BoardContext } from "@app/(game-board)/_states/board-context/BoardContext";
 // Styles
 import styles from "./container.module.css";
 // Components
-import { Menu } from "@app/(shared)/_components";
+import Menu from "@app/(shared)/_components/menu/menu";
 
 interface Props {
   children: React.ReactNode;
 }
 
-function Container({ children }: Props): JSX.Element {
+function Container({ children }: Props): React.ReactElement {
   const { setBoadConfig } = useContext(BoardContext);
 
   const items: TItems[] = [

@@ -12,7 +12,7 @@ interface Props {
   close: () => void;
 }
 
-export const WinnerModal: FC<Props> = ({ isOpen, close, title, subtitle }) => {
+export default function WinnerModal({ isOpen, close, title, subtitle }: Props) {
   const modalRef = useRef<HTMLDivElement>(null);
   const flagRef = useRef<boolean>(false);
 
@@ -57,4 +57,4 @@ export const WinnerModal: FC<Props> = ({ isOpen, close, title, subtitle }) => {
       )}
     </>
   );
-};
+}

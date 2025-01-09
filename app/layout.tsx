@@ -2,7 +2,7 @@ import { Itim } from "next/font/google";
 // Styles
 import "./globals.css";
 // Components
-import { BackImage } from "./(shared)/_components";
+import BackImage from "./(shared)/_components/background/back-image";
 
 const inter = Itim({ subsets: ["latin"], weight: ["400"] });
 
