@@ -1,5 +1,7 @@
 import styles from "./header.module.css";
 
+import type { JSX } from "react";
+
 function Header(): JSX.Element {
   return (
     <h1 className={`${styles["animate-text"]} ${styles.header}`}>

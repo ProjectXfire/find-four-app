@@ -1,5 +1,7 @@
 import styles from "./container.module.css";
 
+import type { JSX } from "react";
+
 interface Props {
   children: React.ReactNode;
 }

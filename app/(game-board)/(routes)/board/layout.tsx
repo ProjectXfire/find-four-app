@@ -1,5 +1,7 @@
 import { Providers } from "@app/(shared)/_components";
 
+import type { JSX } from "react";
+
 interface Props {
   children: React.ReactNode;
 }

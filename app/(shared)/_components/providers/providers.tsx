@@ -1,6 +1,7 @@
-"use client";
-
+"use client";;
 import { BoardProvider } from "@app/(game-board)/_states";
+
+import type { JSX } from "react";
 
 interface Props {
   children: React.ReactNode;

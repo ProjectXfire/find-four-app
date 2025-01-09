@@ -1,5 +1,7 @@
 import { Container, Header, Start } from "../_components";
 
+import type { JSX } from "react";
+
 function HomePage(): JSX.Element {
   return (
     <Container>
