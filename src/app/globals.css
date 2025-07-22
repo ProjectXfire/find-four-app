@@ -9,14 +9,27 @@
   --color-1: #1347d4;
   --color-2: #b91c1c;
   --color-3: #99a9bb;
-  --color-4: #1d437c;
+  --color-4: #3c7697;
   --color-5: #4167ad;
   --color-6: #859dca;
-  --color-7: rgba(27, 46, 70, 0.5);
+  --color-7: #0d3150;
   --success: #16a34a;
   --white: #fff;
-  --player1-color: #6d28d9;
-  --player2-color: #1d4ed8;
+  --player1-color: #7e29af;
+  --player2-color: #244fc4;
+  --bg-gradient: radial-gradient(rgba(0, 0, 0, 0.8) 60%, rgb(236, 125, 21));
+  --player1-color-gradient: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(177, 43, 186, 1) 0%,
+    rgba(122, 31, 196, 1) 100%
+  );
+  --player2-color-gradient: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(35, 82, 235, 1) 100%,
+    rgba(54, 161, 214, 1) 100%
+  );
 }
 
 html,

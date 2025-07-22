@@ -1,0 +1,86 @@
+.animate-entry {
+  width: 100%;
+  max-width: 350px;
+  height: 350px;
+  position: absolute;
+  background: #000000aa;
+  border: 3px dashed rgb(207, 104, 36, 0.5);
+  border-color: rgb(207, 104, 36, 0.5);
+  border-radius: 50%;
+  animation: entry 3s ease-out forwards;
+}
+
+.animate-entry::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0%;
+  width: 50%;
+  height: 2px;
+  background-color: var(--player1-color);
+  border-radius: 1px;
+  transform-origin: bottom;
+  opacity: 0;
+  animation: fadein 0.5s 2s ease-in-out forwards;
+}
+
+.animate-entry::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: 0%;
+  width: 50%;
+  height: 2px;
+  background-color: var(--player2-color);
+  border-radius: 1px;
+  transform-origin: bottom;
+  opacity: 0;
+  animation: fadein 0.5s 2s ease-in-out forwards;
+}
+
+@keyframes entry {
+  0% {
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
+    opacity: 1;
+    scale: 20;
+    border-color: rgb(207, 104, 36, 0.5);
+    background: #000000aa;
+    border-radius: 50%;
+  }
+  50% {
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
+    opacity: 1;
+    scale: 1;
+    border-color: rgb(207, 104, 36, 0.5);
+    background: #000000aa;
+    border-radius: 50%;
+  }
+  70% {
+    width: 100%;
+    max-width: 350px;
+    height: 250px;
+    opacity: 1;
+    border-color: rgb(207, 104, 36, 0.5);
+    background: #000000aa;
+    border-radius: 10px;
+  }
+  100% {
+    width: 100%;
+    max-width: 500px;
+    height: 250px;
+    opacity: 0.5;
+    border-radius: 10px;
+    background: transparent;
+    border-color: transparent;
+  }
+}
+
+@keyframes fadein {
+  100% {
+    opacity: 1;
+  }
+}

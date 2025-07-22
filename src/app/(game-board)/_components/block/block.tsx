@@ -17,7 +17,7 @@ export default function BoardItem({ block }: Props): React.ReactElement {
 
   return (
     <li className={styles["block"]}>
-      <div className={`${styles["block__ball"]} `} />
+      <div className={styles.block__bg}></div>
       <div
         className={`${styles.ball} ${
           board[block[0]][block[1]] === null
