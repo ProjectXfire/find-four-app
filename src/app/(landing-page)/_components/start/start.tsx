@@ -2,12 +2,15 @@ import NextLink from "next/link";
 // Styles
 import styles from "./start.module.css";
 
-function Start() {
+interface Props {
+  delay?: number;
+}
+
+function Start({ delay = 0 }: Props): React.ReactElement {
   return (
     <section className={styles.container}>
-      <p className={styles.text}>Start playing</p>
-      <NextLink href="/board" className={styles.start}>
-        Start
+      <NextLink href="/board" className={styles.start} style={{ animationDelay: `${delay}s` }}>
+        Start playing
       </NextLink>
     </section>
   );
